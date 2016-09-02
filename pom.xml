@@ -194,6 +194,11 @@
 				<artifactId>shprod-common</artifactId>
 				<version>${shprod.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>com.qccr.shprod</groupId>
+				<artifactId>shprod-web</artifactId>
+				<version>${shprod.version}</version>
+			</dependency>
 
 			<dependency>
 				<groupId>redis.clients</groupId>
@@ -364,5 +369,6 @@
 		<module>model/shprod-model</module>
 		<module>tools/shprod-common</module>
 		<module>tools/shprod-deploy</module>
+		<module>web/shprod-web</module>
 	</modules>
 </project>

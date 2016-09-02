@@ -14,16 +14,8 @@
 
 	<aop:aspectj-autoproxy />
 	<context:component-scan base-package="com.qccr.shprod" />
-	<!-- <context:component-scan base-package="com.qccr.framework.insight" /> -->
 
-	<dubbo:application name="${app_name}" owner="platform" />
-	<dubbo:registry protocol="zookeeper" address="${zk.url}" timeout="${zk.timeout}" />
-	<dubbo:protocol name="dubbo" port="${dubbo.port}" />
-	
 	<import resource="local/springbeans-base.xml"/>
 	<import resource="local/springbeans-biz.xml"/>
-	
-	<import resource="remote/springbeans-provider.xml" />
-	<import resource="remote/springbeans-consumer.xml"/>
 
 </beans>
