@@ -3,16 +3,8 @@ package com.qccr.shprod.biz.facade;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.qccr.knife.result.CommonStateCode;
-import com.qccr.knife.result.Result;
-import com.qccr.knife.result.Results;
-import com.qccr.shprod.model.expection.ShprodException;
-
 /**
  * 对外的服务实现基类
- *
- * @author xuhaifeng@qccr.com
- * @since Revision:1.0.0, Date: 2016年3月21日 上午11:05:20
  */
 public abstract class BaseServiceFacadeImpl {
 
@@ -20,16 +12,6 @@ public abstract class BaseServiceFacadeImpl {
 
 	public BaseServiceFacadeImpl() {
 		logger = LoggerFactory.getLogger(this.getClass());
-	}
-
-	protected Result<?> processServiceException(String msg, Throwable t) {
-		logger.error(msg + ", msg:" + t.getMessage(), t);
-
-		if (t instanceof ShprodException) {
-			return Results.newFailedResult(((ShprodException) t).getStateCode(), t.getMessage());
-		} else {
-			return Results.newFailedResult(CommonStateCode.FAILED, "system error, release retry");
-		}
 	}
 
 	protected void logBizMessage(String name, Object... params) {

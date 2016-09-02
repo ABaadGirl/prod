@@ -17,11 +17,6 @@
 			<artifactId>shprod-model</artifactId>
 		</dependency>
 		
-		<dependency>
-			<groupId>com.qccr.gotone</groupId>
-			<artifactId>gotone-sms</artifactId>
-		</dependency>
-		
 		<!-- distributed -->
   		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -34,19 +29,6 @@
 		<dependency>
 			<groupId>com.101tec</groupId>
 			<artifactId>zkclient</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>com.qccr.bmarketcenter</groupId>
-			<artifactId>bmarketcenter-facade</artifactId>
-		</dependency>
-		<dependency>
-	  		<groupId>com.toowell.membercenter</groupId>
-	  		<artifactId>membercenter-facade</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.qccr.bmessagecenter</groupId>
-			<artifactId>bmessagecenter-facade</artifactId>
 		</dependency>
 	</dependencies>
 

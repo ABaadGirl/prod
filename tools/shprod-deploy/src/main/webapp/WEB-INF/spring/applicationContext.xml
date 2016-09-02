@@ -14,7 +14,7 @@
 
 	<aop:aspectj-autoproxy />
 	<context:component-scan base-package="com.qccr.shprod" />
-	<context:component-scan base-package="com.qccr.framework.insight" />
+	<!-- <context:component-scan base-package="com.qccr.framework.insight" /> -->
 
 	<dubbo:application name="${app_name}" owner="platform" />
 	<dubbo:registry protocol="zookeeper" address="${zk.url}" timeout="${zk.timeout}" />

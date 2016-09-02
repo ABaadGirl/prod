@@ -10,11 +10,6 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.qccr.commons</groupId>
-			<artifactId>knife</artifactId>
-			<version>1.0.3</version>
-		</dependency>
-		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
 			<version>1.1.41</version>

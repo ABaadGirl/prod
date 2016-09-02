@@ -79,18 +79,6 @@
 			<artifactId>resteasy-jackson-provider</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.qccr.framework</groupId>
-			<artifactId>insight</artifactId>
-		</dependency>
-		<dependency>
-		  	<groupId>com.qccr.framework.insight.plugin</groupId>
-		  	<artifactId>eventbus</artifactId>
-		</dependency>
-		<dependency>
-		  	<groupId>com.qccr.commons</groupId>
-		  	<artifactId>commondata</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>javax.mail</groupId>
 			<artifactId>mail</artifactId>
 		</dependency>
@@ -104,18 +92,6 @@
 		<dependency>
 		    <groupId>com.dangdang</groupId>
 		    <artifactId>elastic-job-spring</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.qccr.bmarketcenter</groupId>
-			<artifactId>bmarketcenter-facade</artifactId>
-		</dependency>
-		<dependency>
-	  		<groupId>com.toowell.membercenter</groupId>
-	  		<artifactId>membercenter-facade</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.qccr.bmessagecenter</groupId>
-			<artifactId>bmessagecenter-facade</artifactId>
 		</dependency>
 	</dependencies>
 </project>

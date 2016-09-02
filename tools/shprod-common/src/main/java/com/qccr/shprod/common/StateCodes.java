@@ -1,16 +1,35 @@
 package com.qccr.shprod.common;
 
-import com.qccr.knife.result.CommonStateCode;
-import com.qccr.knife.result.StateCode;
+public enum StateCodes {
 
-public final class StateCodes {
+	SUCCESS(0, "SUCCESS"), NO_RELATED_DATA(1, "NO_RELATED_DATA"), FAILED(-1, "FAILED"), DATA_EMPTY(2, "DATA_EMPTY");
+
+	private int code;
+	private String msg;
+
+	public int getCode() {
+		return code;
+	}
+
+	public void setCode(int code) {
+		this.code = code;
+	}
+
+	public String getMsg() {
+		return msg;
+	}
+
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+
+	private StateCodes(int code, String msg) {
+		this.code = code;
+		this.msg = msg;
+	}
+
 	private StateCodes() {
 	}
 
-	public static final StateCode SUCCESS = CommonStateCode.SUCCESS;
 
-	public static final StateCode NO_RELATED_DATA = CommonStateCode.NO_RELATED_DATA;
-
-	public static final StateCode FAILED = CommonStateCode.FAILED;
-	public static final StateCode DATA_EMPTY = CommonStateCode.DATA_EMPTY;
 }
