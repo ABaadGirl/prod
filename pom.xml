@@ -3,14 +3,14 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.qccr.shprod</groupId>
-	<artifactId>shprod-parent</artifactId>
+	<groupId>com.wxl.prod</groupId>
+	<artifactId>prod-parent</artifactId>
 	<packaging>pom</packaging>
 	<version>1.0.0</version>
 	<properties>
 		<spring.version>4.1.6.RELEASE</spring.version>
-		<shprod.version>1.0.0</shprod.version>
-		<shprod.facade.version>1.0.0-SNAPSHOT</shprod.facade.version>
+		<prod.version>1.0.0</prod.version>
+		<prod.facade.version>1.0.0-SNAPSHOT</prod.facade.version>
 	</properties>
 		
 	<dependencies>
@@ -165,39 +165,39 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>com.qccr.shprod</groupId>
-				<artifactId>shprod-integration</artifactId>
-				<version>${shprod.version}</version>
+				<groupId>com.wxl.prod</groupId>
+				<artifactId>prod-integration</artifactId>
+				<version>${prod.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.qccr.shprod</groupId>
-				<artifactId>shprod-facade</artifactId>
-				<version>${shprod.facade.version}</version>
+				<groupId>com.wxl.prod</groupId>
+				<artifactId>prod-facade</artifactId>
+				<version>${prod.facade.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.qccr.shprod</groupId>
-				<artifactId>shprod-biz</artifactId>
-				<version>${shprod.version}</version>
+				<groupId>com.wxl.prod</groupId>
+				<artifactId>prod-biz</artifactId>
+				<version>${prod.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.qccr.shprod</groupId>
-				<artifactId>shprod-dal</artifactId>
-				<version>${shprod.version}</version>
+				<groupId>com.wxl.prod</groupId>
+				<artifactId>prod-dal</artifactId>
+				<version>${prod.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.qccr.shprod</groupId>
-				<artifactId>shprod-model</artifactId>
-				<version>${shprod.version}</version>
+				<groupId>com.wxl.prod</groupId>
+				<artifactId>prod-model</artifactId>
+				<version>${prod.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.qccr.shprod</groupId>
-				<artifactId>shprod-common</artifactId>
-				<version>${shprod.version}</version>
+				<groupId>com.wxl.prod</groupId>
+				<artifactId>prod-common</artifactId>
+				<version>${prod.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.qccr.shprod</groupId>
-				<artifactId>shprod-web</artifactId>
-				<version>${shprod.version}</version>
+				<groupId>com.wxl.prod</groupId>
+				<artifactId>prod-web</artifactId>
+				<version>${prod.version}</version>
 			</dependency>
 
 			<dependency>
@@ -318,7 +318,7 @@
 			    <filtering>true</filtering>  
 			</resource> 
 		</resources>
-		<finalName>shprod</finalName>
+		<finalName>prod</finalName>
 		<plugins>
 			<!-- 打包   -->
 			<plugin>
@@ -362,13 +362,13 @@
 	</build>
 
 	<modules>
-		<module>biz/shprod-biz</module>
-		<module>biz/shprod-integration</module>
-		<module>biz/shprod-facade</module>
-		<module>dal/shprod-dal</module>
-		<module>model/shprod-model</module>
-		<module>tools/shprod-common</module>
-		<module>tools/shprod-deploy</module>
-		<module>web/shprod-web</module>
+		<module>biz/prod-biz</module>
+		<module>biz/prod-integration</module>
+		<module>biz/prod-facade</module>
+		<module>dal/prod-dal</module>
+		<module>model/prod-model</module>
+		<module>tools/prod-common</module>
+		<module>tools/prod-deploy</module>
+		<module>web/prod-web</module>
 	</modules>
 </project>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE configuration>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+	<contextName>prod</contextName>
+	<property name="LOG_CHARSET" value="UTF-8" />
+	<property name="LOG_PATH" value="/data/html/logs/prod" />
+
+	<!-- 控制台输出日志 -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} -
+				%msg%n</pattern>
+		</layout>
+	</appender>
+
+	<!-- biz -->
+	<appender name="biz"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${LOG_PATH}/prod-biz.log</File>
+		<Encoding>${LOG_CHARSET}</Encoding>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>
+				${LOG_PATH}/prod-biz-%d{yyyy-MM-dd}.%i.log
+			</FileNamePattern>
+			<!-- keep 30 days worth of history -->
+			<MaxHistory>30</MaxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<!-- rollover daily or whenever the file size reaches 50MB -->
+				<maxFileSize>50MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern> %d{yyyy-MM-dd HH:mm:ss.SSS} %X{INSIGHT_REQUEST_ID} %-5level
+				%logger{0} - %msg%n</Pattern>
+		</layout>
+	</appender>
+	
+	<!-- error -->
+	<appender name="error"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${LOG_PATH}/prod-error.log</File>
+		<Encoding>${LOG_CHARSET}</Encoding>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>ERROR</level>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>
+				${LOG_PATH}/prod-error-%d{yyyy-MM-dd}.%i.log
+			</FileNamePattern>
+			<!-- keep 30 days worth of history -->
+			<MaxHistory>30</MaxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<!-- rollover daily or whenever the file size reaches 50MB -->
+				<maxFileSize>50MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{0} -
+				%msg%n</Pattern>
+		</layout>
+	</appender>
+	
+	<appender name="digest_facade"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${LOG_PATH}/prod-digest-facade.log</File>
+		<Encoding>${LOG_CHARSET}</Encoding>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>
+				${LOG_PATH}/prod-digest-facade-%d{yyyy-MM-dd}.%i.log
+			</FileNamePattern>
+			<!-- keep 30 days worth of history -->
+			<MaxHistory>30</MaxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<!-- rollover daily or whenever the file size reaches 50MB -->
+				<maxFileSize>50MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{0} -
+				%msg%n</Pattern>
+		</layout>
+	</appender>
+	
+	<appender name="facade"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${LOG_PATH}/prod-facade.log</File>
+		<Encoding>${LOG_CHARSET}</Encoding>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<FileNamePattern>
+				${LOG_PATH}/prod-facade-%d{yyyy-MM-dd}.%i.log
+			</FileNamePattern>
+			<!-- keep 30 days worth of history -->
+			<MaxHistory>30</MaxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<!-- rollover daily or whenever the file size reaches 50MB -->
+				<maxFileSize>50MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{0} -
+				%msg%n</Pattern>
+		</layout>
+	</appender>
+	
+	<logger name="BMESSAGEPROD_DIGEST_LOGGER" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="digest_facade" />
+		<appender-ref ref="error" />
+	</logger>
+	
+	<logger name="BMESSAGEPROD_DETAIL_LOGGER" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="facade" />
+		<appender-ref ref="error" />
+	</logger>
+
+	<!-- biz package -->
+	<logger name="com.wxl.prod.biz" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="biz" />
+		<appender-ref ref="error" />
+	</logger>
+
+	<!-- Root logger的定义 如果没找到匹配的logger，则采用root进行输出 -->
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="error" />
+	</root>
+</configuration>
