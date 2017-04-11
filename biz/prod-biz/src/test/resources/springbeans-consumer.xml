@@ -7,8 +7,8 @@
         http://code.alibabatech.com/schema/dubbo  
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd" default-autowire="byName">
 
-	<dubbo:application name="shprod_testcase_comsumer" owner="platform" />
-	<dubbo:registry address="zookeeper://192.168.3.212:2181" timeout="5000" />
+	<dubbo:application name="rod_testcase_comsumer" owner="platform" />
+	<dubbo:registry address="zookeeper://192.168.0.0:2181" timeout="5000" />
 	<dubbo:protocol name="dubbo" port="20926" />
 	
 </beans>
